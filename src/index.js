@@ -1,12 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import FilterableProductTable from './components/FilterableProductTable';
 import * as serviceWorker from './serviceWorker';
-import { PRODUCTS } from './data';
+import App from './App'
 
 ReactDOM.render(
-  <FilterableProductTable products={PRODUCTS} />,
+  <App />,
   document.getElementById('root')
 );
 
