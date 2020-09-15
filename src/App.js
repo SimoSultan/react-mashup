@@ -6,7 +6,7 @@ import { PRODUCTS } from './components/products/data';
 
 function App() {
   return (
-    <div className="App">
+    
       <Router>
         <Navigation />
         <Switch>
@@ -16,7 +16,7 @@ function App() {
         </Switch>
         <Footer />
       </Router>
-    </div>
+
   );
 }
 
