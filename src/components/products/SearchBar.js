@@ -13,7 +13,6 @@ function SearchBar( {filterText, inStockOnly, onFilterTextChange, onInStockChang
 
     <Container>
       <TextField 
-        fullWidth="auto"
         label="Search..."
         variant="outlined"
         onChange={e => onFilterTextChange(e.target.value)}

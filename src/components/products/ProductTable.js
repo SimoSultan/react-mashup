@@ -31,7 +31,6 @@ function ProductTable( { products, filterText, inStockOnly } ) {
       rows.push(<ProductCategoryRow category={element.category} key={element.category} />)
     }
     rows.push(<ProductRow product={element} key={element.name} />)
-
   }
 
 

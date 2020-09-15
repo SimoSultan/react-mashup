@@ -5,12 +5,11 @@ import PokemonShow from './PokemonShow';
 // a module used to make asynchronous requests to APIs
 // works similarly to fetch
 import axios from 'axios'
-import Container from 'react-bootstrap/Container'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container, Box, Typography } from '@material-ui/core';
 
 
 
-function App() {
+function Pokedex() {
 
   // pokemon is the current state, setPokemon is to update the state
   const [pokemon, setPokemon] = useState([])
@@ -57,7 +56,7 @@ function App() {
     axios.get(url).then(res => {
       // when the request is fetched, then set loading state to false
       setLoading(false)
-      setSummaryPokemon({name: res.data.name, id: res.data.id})
+      setSummaryPokemon({name: res.data.name, id: res.data.id, type1: res.data.types[0].type.name, type2: res.data.types[1].type.name})
     })
   }
 
@@ -75,10 +74,8 @@ function App() {
 
 
   return (
-    // this is a fragment because JS can only return one object
-    <Container className="mt-5 mb-5">
-      <h1 className="header text-center">Simo_Sultan's Pokemon React App</h1>
-      {/* we need to pass the pokemonList component our pokemon */}
+    <Container>
+      <Box mt="1%"><Typography variant="h3" align="center">Pokedex</Typography></Box>
 
       { summaryPokemon == null 
         ? 
@@ -101,11 +98,10 @@ function App() {
           />
       }
       
-      <p className="text-center mt-4"><strong>Source Code:</strong> <a href="https://github.com/SimoSultan/react-pokemon" target="blank">https://github.com/SimoSultan/react-pokemon</a></p>
 
     </Container>
   );
 
 }
 
-export default App;
+export default Pokedex;

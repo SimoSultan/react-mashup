@@ -7,11 +7,11 @@ function ProductInput() {
 
   function addProductToData() {
     let name = document.getElementById('product-name')
-    let cat = document.getElementById('product-cat')
+    let category = document.getElementById('product-cat')
     let price = document.getElementById('product-price')
     let stocked = document.getElementById('product-stocked')
 
-    PRODUCTS.push({ name, cat, price, stocked })
+    PRODUCTS.push({ name, category, price, stocked })
   }
 
   return (
@@ -31,9 +31,8 @@ function ProductInput() {
         <br/>
         <label htmlFor="">Stocked</label>
         <input type="checkbox" id="product-stocked"/>
-
       </form>
-      <Button variant="contained" color="primary" onClick={addProductToData() }>Submit</Button>
+      <Button variant="contained" color="primary" onClick={addProductToData()}>Submit</Button>
     </Container>
 
   );

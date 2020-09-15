@@ -33,6 +33,7 @@ function Footer() {
       <div style={phantom} />
       <div style={style}>
         <a style={link} href="https://www.simonmcurran.com/">simonmcurran.com</a>
+        <p style={link}><strong>Source Code:</strong> <a href="https://github.com/SimoSultan/react-mashup" target="blank">github.com/SimoSultan/react-mashup</a></p>
       </div>
     </div>
   );

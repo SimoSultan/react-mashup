@@ -2,16 +2,13 @@ import React, { useState } from 'react';
 
 import SearchBar from './SearchBar';
 import ProductTable from './ProductTable';
-import ProductInput from './ProductInput';
-
-import { Container, Box, CssBaseline, Typography, Button } from '@material-ui/core';
-// import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+// import ProductInput from './ProductInput';
+import { Container, Box, CssBaseline, Typography } from '@material-ui/core';
 
 function FilterableProductTable( { products } ) {
 
   const [filterText, setFilterText] = useState("")
   const [inStockOnly, setInStockOnly] = useState(false)
-
 
   return (
 
@@ -35,11 +32,7 @@ function FilterableProductTable( { products } ) {
             />
           </Box>
 
-          <Box>
-            <ProductInput />
-          </Box>
         </Container>
-
     </React.Fragment>
 
   );
