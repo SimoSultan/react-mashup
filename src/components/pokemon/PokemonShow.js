@@ -11,10 +11,11 @@ import { Container, Box, Button, Typography } from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
-    width: '20%',
+    width: 300,
   },
   media: {
-    height: 140,
+    height: 300,
+    width: 300,
   },
 });
 
@@ -22,7 +23,7 @@ export default function PokemonShow( { summaryPokemon, setSummaryPokemon } ) {
   const classes = useStyles();
   console.log(summaryPokemon);
 
-  let sprite = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${summaryPokemon.id}.png` 
+  let sprite = `https://pokeres.bastionbot.org/images/pokemon/${summaryPokemon.id}.png` 
 
   return (
 

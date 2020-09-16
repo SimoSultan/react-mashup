@@ -54,9 +54,10 @@ function Pokedex() {
   function changeSummaryPokemon(url) {
     setLoading(true)
     axios.get(url).then(res => {
+      let pokemon = res.data
       // when the request is fetched, then set loading state to false
       setLoading(false)
-      setSummaryPokemon({name: res.data.name, id: res.data.id, type1: res.data.types[0].type.name, type2: res.data.types[1].type.name})
+      setSummaryPokemon({name: pokemon.name, id: pokemon.id, type1: (pokemon.types[0] == undefined ? "None" : pokemon.types[0].type.name), type2: (pokemon.types[1] == undefined ? "None" : pokemon.types[1].type.name)})
     })
   }
 
