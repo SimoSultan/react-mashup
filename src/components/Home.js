@@ -1,18 +1,22 @@
 import React from 'react';
-import { Container, Box, Button } from '@material-ui/core';
+import { Container, Typography } from '@material-ui/core';
 
 function Home() {
  
 
   return (
     <Container>
-      <h1 className="font-weight-light">Home</h1>
-      <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text
-        ever since the 1500s, when an unknown printer took a galley of
-        type and scrambled it to make a type specimen book.
-      </p>
+      <h1 className="font-weight-light"></h1>
+      <Typography variant="h3" gutterBottom>
+        Home
+      </Typography>
+      <Typography variant="body1" gutterBottom>
+        This is my first 2 mini react app projects (pokemon and filtering a list) that have been mashed together into my 3rd react project that utilizes (react-router-dom).
+        The menu button doesn't work yet. This is just a place where I will add a bunch of small projects into this app to demo them. But really, I made this app so that I 
+        don't have multiple node_modules folders sitting in my Google Drive ha. I know all the styling is not perfect, this app hasn't been about that, it's been about learning
+        React and the Material UI component library before we cover it in class so that I can understand the fundamental concepts in greater detail when we cover it.
+        Thanks for reading if you got this far.
+      </Typography>
     </Container>
 
   );

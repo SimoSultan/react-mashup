@@ -4,7 +4,7 @@ let style = {
   backgroundColor: "#F8F8F8",
   borderTop: "1px solid #E7E7E7",
   textAlign: "center",
-  padding: "20px",
+  padding: "1%",
   position: "fixed",
   left: "0",
   bottom: "0",
@@ -23,6 +23,8 @@ let link = {
   fontFamily: "Roboto",
   textDecoration: 'none',
   fontSize: 'larger',
+  margin: '0',
+  marginTop: '1%',
 }
 
 
@@ -32,7 +34,7 @@ function Footer() {
     <div>
       <div style={phantom} />
       <div style={style}>
-        <a style={link} href="https://www.simonmcurran.com/">simonmcurran.com</a>
+        <p style={link}><strong>Portfolio:</strong> <a href="https://www.simonmcurran.com/" target="blank">simonmcurran.com - (v2 is next React project)</a></p>
         <p style={link}><strong>Source Code:</strong> <a href="https://github.com/SimoSultan/react-mashup" target="blank">github.com/SimoSultan/react-mashup</a></p>
       </div>
     </div>
