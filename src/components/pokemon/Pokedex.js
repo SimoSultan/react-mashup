@@ -2,17 +2,20 @@ import React, { useState, useEffect } from 'react';
 import PokemonList from './PokemonList';
 import Pagination from './Pagination';
 import PokemonShow from './PokemonShow';
+// import PartyList from './PartyList';
 // a module used to make asynchronous requests to APIs
 // works similarly to fetch
 import axios from 'axios'
-import { Container, Box, Typography } from '@material-ui/core';
+import { Container, Box, Typography, Button } from '@material-ui/core';
 
+// import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 
 function Pokedex() {
 
   // pokemon is the current state, setPokemon is to update the state
   const [pokemon, setPokemon] = useState([])
+  const [party, setParty] = useState(null)
   const [currentPageUrl, setCurrentPageUrl] = useState("https://pokeapi.co/api/v2/pokemon")
   const [nextPageUrl, setNextPageUrl] = useState()
   const [prevPageUrl, setPrevPageUrl] = useState()
@@ -70,37 +73,50 @@ function Pokedex() {
     setCurrentPageUrl(prevPageUrl)
   }
 
+  async function showParty() {
+
+    let res = await axios.get('http://localhost:4000/pokemon')
+    let party = res.data
+    console.log(party)
+    setParty(party)
+
+  }
+
 
   if (loading) return "Loading..."
 
 
   return (
-    <Container>
-      <Box mt="1%"><Typography variant="h3" align="center">Pokedex</Typography></Box>
+      <Container>
+        <Box mt="1%"><Typography variant="h3" align="center">Pokedex</Typography></Box>
+        
+        <Button variant="outlined" color="primary" onClick={() => showParty()}>
+          My Party
+        </Button>
 
-      { summaryPokemon == null 
-        ? 
-          <>
-            <PokemonList 
-              pokemon = { pokemon } 
-              changeSummaryPokemon = { changeSummaryPokemon } 
-            />
-            <Container className="d-flex justify-content-center">
-              <Pagination
-                goToNextPage = { nextPageUrl ? goToNextPage : null }
-                goToPrevPage = { prevPageUrl ? goToPrevPage : null }
+        { summaryPokemon == null 
+          ? 
+            <>
+              <PokemonList 
+                pokemon = { pokemon } 
+                changeSummaryPokemon = { changeSummaryPokemon } 
               />
-            </Container>
-          </>
-        : 
-          <PokemonShow 
-            summaryPokemon = { summaryPokemon } 
-            setSummaryPokemon = { setSummaryPokemon } 
-          />
-      }
-      
+              <Container className="d-flex justify-content-center">
+                <Pagination
+                  goToNextPage = { nextPageUrl ? goToNextPage : null }
+                  goToPrevPage = { prevPageUrl ? goToPrevPage : null }
+                />
+              </Container>
+            </>
+          : 
+            <PokemonShow 
+              summaryPokemon = { summaryPokemon } 
+              setSummaryPokemon = { setSummaryPokemon } 
+            />
+        }
+        
 
-    </Container>
+      </Container>
   );
 
 }

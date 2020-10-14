@@ -46,10 +46,10 @@ export default function PokemonShow( { summaryPokemon, setSummaryPokemon } ) {
                 { summaryPokemon === undefined ? "Name" : capitalize(summaryPokemon.name)}
               </Typography>
               <Typography variant="body2" color="textSecondary" component="p">
-                Type1: {summaryPokemon.type1 === undefined ? "None" : capitalize(summaryPokemon.type1)}
+                Type1: {capitalize(summaryPokemon.type1)}
               </Typography>
               <Typography variant="body2" color="textSecondary" component="p">
-                Type2: {summaryPokemon.type2 === undefined ? "None" : capitalize(summaryPokemon.type2)}
+                Type2: {capitalize(summaryPokemon.type2)}
               </Typography>
             </CardContent>
           </CardActionArea>
@@ -61,7 +61,7 @@ export default function PokemonShow( { summaryPokemon, setSummaryPokemon } ) {
         justifyContent="center"
         mt="2%"
       >
-        <Button variant="contained" onClick={() => setSummaryPokemon(null)}>Previous</Button>
+        <Button variant="contained" onClick={() => setSummaryPokemon(null)}>BACK</Button>
       </Box>
 
 

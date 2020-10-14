@@ -34,7 +34,7 @@ function Footer() {
     <div>
       <div style={phantom} />
       <div style={style}>
-        <p style={link}><strong>Portfolio (v1):</strong> <a href="https://www.simonmcurran.com/" target="blank">simonmcurran.com - (v2 is next React project)</a></p>
+        <p style={link}><strong>Portfolio (v1):</strong> <a href="https://www.simonmcurran.com/" target="blank">simonmcurran.com - (v2 React portfolio in progress)</a></p>
         <p style={link}><strong>Source Code:</strong> <a href="https://github.com/SimoSultan/react-mashup" target="blank">github.com/SimoSultan/react-mashup</a></p>
       </div>
     </div>

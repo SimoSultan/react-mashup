@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-function Navigation( { location} ) {
+function Navigation( { location } ) {
   const classes = useStyles();
 
   return (
