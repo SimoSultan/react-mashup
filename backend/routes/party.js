@@ -28,10 +28,12 @@ router.post('/add', async (req,res) => {
 
 // get 1 pokemon from the party
 router.get('/:id', async (req,res) => {
-  const id = req.params.id
+  const pokeId = req.params.id
   try {
+    let pokemon = await PokemonModel.findOne({pokeId})
+    console.log(pokemon);
     // let pokemon = await PokemonModel.findOne({pokeId: id, owner: 'simon'})
-    let pokemon = await PokemonModel.findById(id)
+    // let pokemon = await PokemonModel.findById(id)
     res.status(200).json(pokemon)
   } catch (error) {
     res.status(400).json(`Error: ${error}}`)
@@ -40,9 +42,9 @@ router.get('/:id', async (req,res) => {
 
 // delete a pokemon from the party
 router.delete('/:id', async (req,res) => {
-  const id = req.params.id
+  const pokeId = req.params.id
   try {
-    await PokemonModel.findByIdAndDelete(id)
+    await PokemonModel.findOneAndDelete({pokeId})
     res.status(200).json('Pokemon deleted')
   } catch (error) {
     res.status(400).json(`Error: ${error}}`)

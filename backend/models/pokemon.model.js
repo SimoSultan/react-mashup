@@ -14,6 +14,14 @@ const Pokemon = new Schema({
     type: String,
     required: true
   },
+  type1: {
+    type: String,
+    required: true
+  },
+  type2: {
+    type: String,
+    required: true
+  },
   owner: {
     type:String, 
     required: true
