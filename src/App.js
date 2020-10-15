@@ -11,9 +11,9 @@ function App() {
       <Router>
         <Navigation />
         <Switch>
-          <Route path="/" exact component={() => <Home />} />
-          <Route path="/pokemon" exact component={() => <Pokedex />} />
-          <Route path="/products" exact component={() => <FilterableProductTable products={PRODUCTS} />} />
+          <Route exact path="/" exact component={() => <Home />} />
+          <Route exact path="/pokemon" component={() => <Pokedex />} />
+          <Route exact path="/products" component={() => <FilterableProductTable products={PRODUCTS} />} />
         </Switch>
         <Footer />
       </Router>

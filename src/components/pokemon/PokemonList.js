@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Pagination from './Pagination';
-import PokemonShow from './PokemonShow';
-
 
 import { capitalize, getPokemonNumber } from './Helpers'
 import axios from 'axios'
@@ -13,6 +11,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
 import { Container, Box, Typography, Button } from '@material-ui/core';
 
+import { Link } from "react-router-dom";
 
 
 async function addToParty(url) {
@@ -22,6 +21,8 @@ async function addToParty(url) {
     let p = res.data
     pokemon.name = p.name
     pokemon.pokeId = p.id
+    pokemon.type1 = (p.types[0] == undefined ? "None" : p.types[0].type.name)
+    pokemon.type2 = (p.types[1] == undefined ? "None" : p.types[1].type.name)
     pokemon.pokeImg = p.sprites.front_default
     pokemon.owner = 'simon'
   })
@@ -44,7 +45,7 @@ export default function PokemonList() {
   const [nextPageUrl, setNextPageUrl] = useState()
   const [prevPageUrl, setPrevPageUrl] = useState()
   const [loading, setLoading] = useState(true)
-  const [showPokemon, setShowPokemon] = useState(null)
+  // const [showPokemon, setShowPokemon] = useState(null)
 
     // this is a hook that takes a function
   // it runs every single time based on the props that we pass
@@ -87,16 +88,7 @@ export default function PokemonList() {
 
   if (loading) return "Loading..."
 
-  function changeShowPokemon(url) {
-    setLoading(true)
-    axios.get(url).then(res => {
-      let pokemon = res.data
-      // when the request is fetched, then set loading state to false
-      setLoading(false)
-      setShowPokemon({name: pokemon.name, id: pokemon.id, type1: (pokemon.types[0] == undefined ? "None" : pokemon.types[0].type.name), type2: (pokemon.types[1] == undefined ? "None" : pokemon.types[1].type.name)})
-    })
-  }
-
+  
   const listItemsWithDividers = []
   const listItems = pokemon.map(p => (
     <ListItem key={p.name}>
@@ -105,8 +97,9 @@ export default function PokemonList() {
           <Button variant="outlined" color="primary" onClick={() => addToParty(p.url)}>
             Add to Party
           </Button>
-          <Button variant="outlined" color="primary" onClick={() => changeShowPokemon(p.url)}>
-            More Details
+          {/* <Button variant="outlined" color="primary" onClick={() => changeShowPokemon(p.url)}> */}
+          <Button variant="outlined" color="primary">
+            <Link to={`/pokemon/show/${getPokemonNumber(p.url)}`}>Learn More</Link>
           </Button>
       </ListItemSecondaryAction>
     </ListItem>
@@ -121,34 +114,24 @@ export default function PokemonList() {
 
   return (
 
-    <Container>
+    <Container >
 
-        <Box mt="1%">
-          <Typography gutterBottom align="center" variant="h4">
-            The Pokedex
-          </Typography>
-        </Box>
+      <Box mt="1%">
+        <Typography gutterBottom align="center" variant="h4">
+          The Pokedex
+        </Typography>
+      </Box>
 
-      { showPokemon == null 
-        ? 
-          <>
-            <List>
-              {listItemsWithDividers}
-            </List>
+      <List>
+        {listItemsWithDividers}
+      </List>
 
-            <Container className="d-flex justify-content-center">
-              <Pagination
-                goToNextPage = { nextPageUrl ? goToNextPage : null }
-                goToPrevPage = { prevPageUrl ? goToPrevPage : null }
-              />
-            </Container>
-          </>
-        : 
-          <PokemonShow 
-            showPokemon = { showPokemon } 
-            setShowPokemon = { setShowPokemon } 
-          />
-      }
+      <Container className="d-flex justify-content-center">
+        <Pagination
+          goToNextPage = { nextPageUrl ? goToNextPage : null }
+          goToPrevPage = { prevPageUrl ? goToPrevPage : null }
+        />
+      </Container>
 
     </Container>
 
