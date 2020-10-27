@@ -50,6 +50,8 @@ export default function PartyList() {
 
   async function removeFromParty(id) {
 
+    if (!confirm("Are you sure you wish to remove this pokemon?")) return
+    
     try {
       let res = await axios.delete(`http://localhost:4000/pokemon/${id}`)
       console.log(res.data);
@@ -68,6 +70,8 @@ export default function PartyList() {
 
 
   if (loading) return "Loading..."
+
+  
 
   const partyList = party.map(pok => (
   

@@ -27,6 +27,7 @@ function Pokedex() {
           <Button variant="outlined" color="primary" >
             <Link to="/pokemon/pokedex">The Pokedex</Link>
           </Button>
+          
           <Switch>
             <Route exact path="/pokemon/show/:pokeId" component={() => <PokemonShow /> } />
             <Route exact path="/pokemon/party" component={() => <PartyList />} />

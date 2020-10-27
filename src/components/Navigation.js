@@ -29,23 +29,26 @@ function Navigation( { location } ) {
   return (
 
     <div className={classes.root}>
-    <AppBar position="static">
-      <Toolbar>
-        <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-          <MenuIcon />
-        </IconButton>
-        <Button color="inherit" className={`${location.pathname === "/" ? "active" : ""}`}>
-          <Link className={classes.link} to="/">Home</Link>
-        </Button>
-        <Button color="inherit" className={`${location.pathname === "/pokemon" ? "active" : ""}`}>
-          <Link className={classes.link} to="/pokemon">Pokemon List</Link>
-        </Button>
-        <Button color="inherit" className={`${location.pathname === "/products" ? "active" : ""}`}>
-          <Link className={classes.link} to="/products">Filtering Products</Link>
-        </Button>
-      </Toolbar>
-    </AppBar>
-  </div>
+      <AppBar position="static">
+        <Toolbar>
+          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+            <MenuIcon />
+          </IconButton>
+          <Button color="inherit" className={`${location.pathname === "/" ? "active" : ""}`}>
+            <Link className={classes.link} to="/">Home</Link>
+          </Button>
+          <Button color="inherit" className={`${location.pathname === "/pokemon" ? "active" : ""}`}>
+            <Link className={classes.link} to="/pokemon">Pokemon List</Link>
+          </Button>
+          <Button color="inherit" className={`${location.pathname === "/products" ? "active" : ""}`}>
+            <Link className={classes.link} to="/products">Filtering Products</Link>
+          </Button>
+          <Button color="inherit" className={`${location.pathname === "/buzzy" ? "active" : ""}`}>
+            <Link className={classes.link} to="/buzzy">Buzzy/Yelling</Link>
+          </Button>
+        </Toolbar>
+      </AppBar>
+    </div>
 
   );
 }
