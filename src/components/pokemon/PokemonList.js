@@ -135,7 +135,5 @@ export default function PokemonList() {
 
     </Container>
 
-
-
   )
 }

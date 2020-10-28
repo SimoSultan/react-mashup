@@ -3,7 +3,7 @@ import YellingGreeter from './YellingGreeter'
 import Buzzy from './Buzzy'
 import CookieClicker from './CookieClicker'
 import BrowserFeatures from './BrowserFeatures'
-import { Typography, Grid } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 
 const mainGrid = {
   textAlign: "center",

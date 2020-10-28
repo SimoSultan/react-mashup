@@ -7,6 +7,7 @@ import {
   FilterableProductTable, 
   Pokedex,
   AllChgs,
+  LoginMovieChg,
  } from "./components/export";
 import { PRODUCTS } from './components/products/data.js';
 
@@ -23,6 +24,7 @@ function App() {
           <Route exact path="/products" component={() => <FilterableProductTable products={PRODUCTS} />} />
           {/* THIS BELOW WORKS THE SAME AS ABOVE AND I HAVE NO IDEA WHY YET */}
           <Route exact path="/buzzy" component={AllChgs} />
+          <Route exact path="/login" component={LoginMovieChg} />
         </Switch>
         <Footer />
       </Router>
