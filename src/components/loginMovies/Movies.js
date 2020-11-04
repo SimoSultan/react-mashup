@@ -16,7 +16,7 @@ class Movies extends React.Component {
     let { movieArray } = this.state
     if(movieArray.includes(movie)) {
       alert('This movie already exists in your list.')
-    } else if(movie == "") {
+    } else if(movie === "") {
       alert('Please ensure input is not empty.')
     } else {
       this.setState({movieArray: movieArray.concat(movie)})
@@ -24,11 +24,15 @@ class Movies extends React.Component {
   }
 
   handleMovieRemove = (movie) => {
+    console.log(movie);
+    console.log(movie);
     let { movieArray } = this.state
     movie = movie.toLowerCase()
     
     const index = movieArray.indexOf(movie);
+    console.log(index);
     movieArray.splice(index, 1);
+    console.log(movieArray);
 
     this.setState({movieArray: movieArray})
   }

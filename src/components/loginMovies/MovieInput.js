@@ -15,8 +15,6 @@ function MovieInput({ handleMovieSubmit }) {
     setMovie('')
   }
 
-
-
   return (
     <Grid container direction="column" justify="center" alignItems="center" spacing={2} style={{paddingTop: '3%'}}>
       <Grid item>

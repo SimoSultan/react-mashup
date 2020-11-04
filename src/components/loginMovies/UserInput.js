@@ -15,13 +15,13 @@ class UserInput extends React.Component {
 
   handleSubmit = () => {
     let { text } = this.state
-    alert(`You typed: ${(text == '') ? "Nothing..." : text}`)
+    alert(`You typed: ${(text === '') ? "Nothing..." : text}`)
   }
 
   render() {
     const { text } = this.state
     return (
-      <Grid container style={{paddingTop: '4%'}} justify="space-around" alignItem="center">
+      <Grid container style={{paddingTop: '4%'}} justify="space-around" alignItems="center">
         <TextField id="default-input" value={ text } label="input something here" variant="outlined" onChange={this.handleChange}/>
         <Button variant="outlined" color="primary" size="large" onClick={this.handleSubmit}>Submit</Button>
       </Grid>

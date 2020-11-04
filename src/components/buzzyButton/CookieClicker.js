@@ -24,13 +24,13 @@ class CookieClicker extends React.Component {
   }
 
   plusCounter = () => {
-    this.setState({ plus: ++this.state.plus })
-    this.setState({ count: this.state.count += this.state.increment })
+    this.setState({ plus: this.state.plus + 1 })
+    this.setState({ count: this.state.count + this.state.increment })
   }
 
   minusCounter = () => {
-    this.setState({minus: ++this.state.minus})
-    this.setState({count: this.state.count -= this.state.increment})
+    this.setState({minus: this.state.minus + 1})
+    this.setState({count: this.state.count - this.state.increment})
   }
 
   setIncrement = () => {
@@ -51,7 +51,7 @@ class CookieClicker extends React.Component {
 
   componentDidMount() {
     this.myTimer = setInterval(() => {
-      this.setState({count: this.state.count += this.state.increment})
+      this.setState({count: this.state.count + this.state.increment})
     }, this.state.interval);
   }
 
@@ -62,7 +62,7 @@ class CookieClicker extends React.Component {
         clearInterval(this.myTimer)
       }
       this.myTimer = setInterval(() => {
-        this.setState({count: this.state.count += this.state.increment})
+        this.setState({count: this.state.count + this.state.increment})
       }, int);
     }
   }

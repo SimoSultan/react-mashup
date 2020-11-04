@@ -3,11 +3,13 @@ import { Container, List, ListItem, ListItemText, ListItemIcon, IconButton, List
 import MovieIcon from '@material-ui/icons/Movie';
 import DeleteIcon from '@material-ui/icons/Delete';
 
+// eslint-disable-next-line no-extend-native
+String.prototype.capitalize = function() {
+  return this.charAt(0).toUpperCase() + this.slice(1)
+}
+
 function MovieList({ movies, handleMovieRemove }) {
 
-  String.prototype.capitalize = function() {
-    return this.charAt(0).toUpperCase() + this.slice(1)
-  }
 
   function removeMovie(movie) {
     handleMovieRemove(movie)

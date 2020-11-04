@@ -31,7 +31,7 @@ class Login extends React.Component {
   
   handleLogin = (logInUsername, logInPassword) => {
     const { currentUsername, currentPassword } = this.state
-    if(logInUsername == currentUsername && logInPassword == currentPassword) {
+    if(logInUsername === currentUsername && logInPassword === currentPassword) {
       this.setState({loggedIn: true})
     } else {
       alert('Incorrect username or password, please try again.')
@@ -47,7 +47,7 @@ class Login extends React.Component {
   }
 
   handleLogout = () => {
-    if (confirm("Are you sure you wish to logout?")) {
+    if (window.confirm("Are you sure you wish to logout?")) {
       this.setState({loggedIn: false})
     }
   }
@@ -61,7 +61,7 @@ class Login extends React.Component {
         <Container>
           { loggedIn 
             ? <Button variant="contained" color="secondary" onClick={this.handleLogout} style={padding}>Log Out</Button>
-            : currentUsername == ''  && currentPassword == ''
+            : currentUsername === ''  && currentPassword === ''
               ? <SignupForm handleSignup={this.handleSignup} />
               : <LoginForm handleLogin={this.handleLogin}/>
           }

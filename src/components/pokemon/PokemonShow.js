@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { capitalize } from './Helpers'
-import { BrowserRouter as Route, Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import axios from 'axios'
 
@@ -10,7 +10,7 @@ import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import { Container, Box, Button, Typography } from '@material-ui/core';
+import { Container, Box, Typography } from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
@@ -28,26 +28,26 @@ export default function PokemonShow() {
   const classes = useStyles();
   const [loading, setLoading] = useState(true)
   const [showPokemon, setShowPokemon] = useState({})
-  const [currentPokemonUrl, setCurrentPokemonUrl] = useState(`https://pokeapi.co/api/v2/pokemon/${pokeId}`)
+  const [currentPokemonUrl, setCurrentPokemonUrl] = useState('')
   
+  setCurrentPokemonUrl(`https://pokeapi.co/api/v2/pokemon/${pokeId}`)
+
   useEffect(() => {
     setLoading(true)
     getPokemonData(currentPokemonUrl)
-    console.log(showPokemon);
-  }, [])
+  }, [currentPokemonUrl])
 
   async function getPokemonData(url) {
     setLoading(true)
     let res = await axios.get(url)
-    console.log(res.data);
     setShowPokemon(res.data)
     setLoading(false)
   }
   
   if (loading) return "Loading..."
   
-  let type1 = (showPokemon.types[0] == undefined) ? "None" : showPokemon.types[0].type.name
-  let type2 = (showPokemon.types[1] == undefined) ? "None" : showPokemon.types[1].type.name
+  let type1 = (showPokemon.types[0] === undefined) ? "None" : showPokemon.types[0].type.name
+  let type2 = (showPokemon.types[1] === undefined) ? "None" : showPokemon.types[1].type.name
   let sprite = `https://pokeres.bastionbot.org/images/pokemon/${showPokemon.id}.png` 
   
 

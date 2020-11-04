@@ -21,8 +21,8 @@ async function addToParty(url) {
     let p = res.data
     pokemon.name = p.name
     pokemon.pokeId = p.id
-    pokemon.type1 = (p.types[0] == undefined ? "None" : p.types[0].type.name)
-    pokemon.type2 = (p.types[1] == undefined ? "None" : p.types[1].type.name)
+    pokemon.type1 = (p.types[0] === undefined ? "None" : p.types[0].type.name)
+    pokemon.type2 = (p.types[1] === undefined ? "None" : p.types[1].type.name)
     pokemon.pokeImg = p.sprites.front_default
     pokemon.owner = 'simon'
   })

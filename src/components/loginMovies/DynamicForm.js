@@ -14,7 +14,7 @@ function DynamicForm() {
   }
 
   function handleInputRemove() {
-    if(inputArray.length == 1) {
+    if(inputArray.length === 1) {
       setInputArray([])
     } else {
       setInputArray(inputArray.splice(-1, 1))

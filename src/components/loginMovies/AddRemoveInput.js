@@ -2,9 +2,6 @@ import React from 'react'
 import { Button, Grid } from '@material-ui/core';
 
 class AddRemoveInput extends React.Component {
-  constructor(props) {
-    super(props)
-  }
 
   handleAddInput = () => {
     this.props.handleInputAdd()
@@ -16,7 +13,7 @@ class AddRemoveInput extends React.Component {
 
   render() {
     return (
-      <Grid container style={{paddingTop: '4%'}} justify="space-around" alignItem="center">
+      <Grid container style={{paddingTop: '4%'}} justify="space-around" alignItems="center">
         <Button color="primary" onClick={this.handleAddInput}>Add Input</Button>
         <Button color="secondary" onClick={this.handleRemoveInput}>Remove Input</Button>
       </Grid>

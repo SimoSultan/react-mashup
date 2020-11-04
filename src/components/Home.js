@@ -6,7 +6,6 @@ function Home() {
 
   return (
     <Container>
-      <h1 className="font-weight-light"></h1>
       <Typography variant="h3" gutterBottom>
         Home
       </Typography>

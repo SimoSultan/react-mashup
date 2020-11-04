@@ -11,7 +11,7 @@ function SignupForm({ handleSignup }) {
   const handleInputChange = (event) => {
     let name = event.target.name
     let value = event.target.value
-    name == 'username' ? setUsername(value) : setPassword(value)
+    name === 'username' ? setUsername(value) : setPassword(value)
   }
 
   const handleSubmit = (event) => {
