@@ -1,8 +1,7 @@
 import React, { Fragment } from 'react'
-import Login from './Login'
-import Movies from './Movies'
-import DynamicForm from './DynamicForm'
-import BusinessCard from './BusinessCard'
+import Login from './login/Login'
+import Movies from './movies/Movies'
+import DynamicForm from './dynamicInput/DynamicForm'
 import { Grid } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 
@@ -53,7 +52,6 @@ class LoginMovieChg extends React.Component {
 
             {/* RIGHT BOTTOM */}
             <Grid container item direction="column" xs={6}>
-              <BusinessCard />
             </Grid>
 
           </Grid>

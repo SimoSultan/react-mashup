@@ -17,12 +17,15 @@ function DynamicForm() {
     if(inputArray.length === 1) {
       setInputArray([])
     } else {
-      setInputArray(inputArray.splice(-1, 1))
+      let array = [...inputArray]
+      let index = array.length - 1
+      array.splice(index, 1)
+      setInputArray(array)
     }
   }
 
   const inputList = inputArray.map(element => (
-    <ListItem key={inputArray.indexOf(element)}>
+    <ListItem key={inputArray.indexOf(element)} style={{padding: '0'}}>
       {element}
     </ListItem>
   ))
@@ -30,11 +33,11 @@ function DynamicForm() {
   return (
     <>
       <Typography variant="h4">Dynamic Form</Typography>
+      <AddRemoveInput handleInputAdd={handleInputAdd} handleInputRemove={handleInputRemove} />
       <UserInput />
-      <List>
+      <List >
         {inputList}
       </List>
-      <AddRemoveInput handleInputAdd={handleInputAdd} handleInputRemove={handleInputRemove} />
     </>
   )
 }

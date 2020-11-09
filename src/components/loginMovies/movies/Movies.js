@@ -24,8 +24,6 @@ class Movies extends React.Component {
   }
 
   handleMovieRemove = (movie) => {
-    console.log(movie);
-    console.log(movie);
     let { movieArray } = this.state
     movie = movie.toLowerCase()
     
