@@ -1,4 +1,5 @@
 import React from "react";
+import DarkModeToggle from './DarkMode/darkMode'
 import { Link, withRouter } from "react-router-dom";
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -20,11 +21,18 @@ const useStyles = makeStyles((theme) => ({
   link: {
     color: '#fff',
     textDecoration: 'none'
-  }
+  },
+  themeSun: {
+      color: 'white'
+  },
+  themeMoon: {
+    color: 'rgb(5, 5, 5)'
+}
 }));
 
 function Navigation( { location } ) {
   const classes = useStyles();
+
 
   return (
 
@@ -34,6 +42,7 @@ function Navigation( { location } ) {
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <MenuIcon />
           </IconButton>
+          <DarkModeToggle />
           <Button color="inherit" className={`${location.pathname === "/" ? "active" : ""}`}>
             <Link className={classes.link} to="/">Home</Link>
           </Button>
@@ -55,6 +64,7 @@ function Navigation( { location } ) {
           <Button color="inherit" className={`${location.pathname === "/bill" ? "active" : ""}`}>
             <Link className={classes.link} to="/bill">Bill Tips</Link>
           </Button>
+
         </Toolbar>
       </AppBar>
     </div>
