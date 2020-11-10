@@ -8,47 +8,45 @@ import List from '@material-ui/core/List';
 
 
 function ToDoList() {
-
-  const [items, setItems] = useState([])
-  let toDoItems = []
-
+  
+    const [items, setItems] = useState([])
 
 
-  function handleInputItem(task) {
-    setItems(items.concat(task))
-  }
-
-  function removeItemFromList(text) {
-    console.log(text);
-    let tempArray = items
-    console.log(tempArray);
-    const index = tempArray.indexOf(text);
-    console.log(index);
-    tempArray.splice(index, 1);
-    console.log(tempArray);
-
-    setItems(tempArray)
-  }
-
-  useEffect(() => {
-    if (items.length < 1) {
-      toDoItems.push(<Typography variant="body1">No tasks to display</Typography>)
-    } 
-    else {
-      toDoItems = items.map((item, index) => (
-        <ToDoListItem key={`item-${index}`} text={item} removeItemFromList={removeItemFromList} />
-      ))
+    function handleInputItem(task) {
+        if (task === "") return (alert('Please include a task'))
+        if (items.includes(task)) return (alert("That task already exists."))
+        const tempArray = [...items, task]
+        setItems(tempArray)
     }
-  }, [items])
 
-  return (
-    <Container>
-      <List>
-        {toDoItems}
-      </List>
-      <AddItemToList handleInputItem={handleInputItem}/>
-    </Container>
-  )
+    function handleRemove(text) {
+		const newList = items.filter((item) => item !== text);
+		setItems(newList);
+	}
+
+	function updateList() {
+		console.log(items)
+		let toDoItems = []
+
+		if (items.length < 1) {
+			toDoItems = [<Typography variant="body1">No tasks to display</Typography>]
+		} 
+		else {
+			toDoItems = items.map((item, index) => (
+				  <ToDoListItem key={index.toString()} text={item} handleRemove={handleRemove} />
+			))
+		}
+		return toDoItems
+	}
+
+    return (
+		<Container>
+			<List>
+				{updateList()}
+			</List>
+			<AddItemToList handleInputItem={handleInputItem}/>
+		</Container>
+    )
 }
 
 

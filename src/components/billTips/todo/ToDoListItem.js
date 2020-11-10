@@ -13,7 +13,8 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-function ToDoListItem({ text, removeItemFromList }) {
+function ToDoListItem({ text, handleRemove }) {
+  // function ToDoListItem({ text }) {
   const [checked, setChecked] = useState(false)
   const classes = useStyles()
 
@@ -38,8 +39,8 @@ function ToDoListItem({ text, removeItemFromList }) {
         </Typography>
       </Grid>
       <Grid item xs={3}>
-        <IconButton color="secondary" onClick={() => removeItemFromList(text)}>
-          <DeleteIcon />
+        <IconButton  onClick={() => handleRemove(text)}>
+          <DeleteIcon color={checked ? 'disabled' : "secondary"} />
         </IconButton>
       </Grid>
     </Grid>

@@ -7,6 +7,7 @@ import { Container, Box, CssBaseline, Typography } from '@material-ui/core';
 
 function FilterableProductTable( { products } ) {
 
+
   const [filterText, setFilterText] = useState("")
   const [inStockOnly, setInStockOnly] = useState(false)
 

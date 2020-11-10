@@ -21,14 +21,14 @@ function App() {
       <Router>
         <Navigation />
         <Switch>
-          <Route path="/" exact component={() => <Home />} />
-          <Route exact path="/pokemon" component={() => <Pokedex />} />
-          <Route exact path="/products" component={() => <FilterableProductTable products={PRODUCTS} />} />
+          <Route exact path="/" component={() => <Home />} />
+          <Route path="/pokemon" component={() => <Pokedex />} />
+          <Route path="/products" component={() => <FilterableProductTable products={PRODUCTS} />} />
           {/* THIS BELOW WORKS THE SAME AS ABOVE AND I HAVE NO IDEA WHY YET */}
-          <Route exact path="/buzzy" component={AllChgs} />
-          <Route exact path="/login" component={LoginMovieChg} />
-          <Route exact path="/business" component={BusinessCard} />
-          <Route exact path="/bill" component={BillTip} />
+          <Route path="/buzzy" component={AllChgs} />
+          <Route path="/login" component={LoginMovieChg} />
+          <Route path="/business" component={BusinessCard} />
+          <Route path="/bill" component={BillTip} />
         </Switch>
         <Footer />
       </Router>
