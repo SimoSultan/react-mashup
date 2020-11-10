@@ -1,4 +1,4 @@
-import React, { useState, useEffect }  from 'react'
+import React, { useState }  from 'react'
 import ToDoListItem from './ToDoListItem'
 import AddItemToList from './AddItemToList'
 
@@ -25,11 +25,10 @@ function ToDoList() {
 	}
 
 	function updateList() {
-		console.log(items)
 		let toDoItems = []
 
 		if (items.length < 1) {
-			toDoItems = [<Typography variant="body1">No tasks to display</Typography>]
+			toDoItems = [<Typography key={'default'} variant="body1">No tasks to display</Typography>]
 		} 
 		else {
 			toDoItems = items.map((item, index) => (
