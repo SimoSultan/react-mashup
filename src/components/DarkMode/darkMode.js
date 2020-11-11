@@ -14,8 +14,8 @@ const useStyles = makeStyles(() => ({
     },
     themeMoon: {
       color: 'rgb(5, 5, 5)'
-  }
-  }));
+    }
+}));
 
 const DarkModeToggle = () => {
     const classes = useStyles();
@@ -45,7 +45,10 @@ const DarkModeToggle = () => {
 
     return (
         <IconButton onClick={() => toggleThemeChange()}>
-                {isDark ? <Brightness7Icon className={classes.themeSun}/> : <Brightness4Icon className={classes.themeMoon}/> } 
+                {   isDark 
+                    ? <Brightness7Icon className={classes.themeSun}/> 
+                    : <Brightness4Icon className={classes.themeMoon}/> 
+                } 
         </IconButton>
     )
 }

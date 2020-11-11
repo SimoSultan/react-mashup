@@ -9,7 +9,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import { Typography, CssBaseline } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 
 
 function ProductTable( { products, filterText, inStockOnly } ) {
@@ -37,7 +37,6 @@ function ProductTable( { products, filterText, inStockOnly } ) {
   return (
 
     <TableContainer component={Paper}>
-      <CssBaseline />
       <Table aria-label="simple table">
         <TableHead>
           <TableRow>

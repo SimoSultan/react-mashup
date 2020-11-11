@@ -1,8 +1,6 @@
 import React from 'react';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
-import { CssBaseline } from '@material-ui/core';
-
 
 function ProductRow( { product } ) {
 
@@ -11,7 +9,6 @@ function ProductRow( { product } ) {
   return (
 
     <TableRow>
-      <CssBaseline />
       <TableCell>{name}</TableCell>
       <TableCell align="right">${product.price}</TableCell>
     </TableRow>

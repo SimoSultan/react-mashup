@@ -11,7 +11,7 @@ import {  makeStyles } from '@material-ui/core';
 const useStyles = makeStyles(() => ({
   receipt: {
     width: '100%',
-    marginTop: '5%',
+    padding: '5%',
   },
 }))
 

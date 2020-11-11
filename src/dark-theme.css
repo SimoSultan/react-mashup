@@ -1,6 +1,6 @@
 
 html[data-theme="dark"]  {
-    --color: rgb(250, 250, 250);
+    --color: #fafafade;
     --background-color: #151515;
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { CssBaseline, Button, Container, Typography, Box } from '@material-ui/core';
+import { Button, Container, Typography, Box } from '@material-ui/core';
 import { PRODUCTS } from './data';
 
 

@@ -5,9 +5,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import TextField from '@material-ui/core/TextField';
 import { Container } from '@material-ui/core';
 
-
 function SearchBar( {filterText, inStockOnly, onFilterTextChange, onInStockChange } ) {
- 
 
   return (
 

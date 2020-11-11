@@ -8,3 +8,4 @@ export { default as AllChgs } from "./buzzyButton/AllChgs";
 export { default as LoginMovieChg } from "./loginMovies/LoginMovieChg";
 export { default as BusinessCard } from "./loginMovies/businessCard/BusinessCard";
 export { default as BillTip } from "./billTips/BillTip";
+export { default as Tweetter } from "./tweetter/Tweetter";

@@ -11,6 +11,7 @@ import {
     LoginMovieChg,
     BusinessCard,
     BillTip,
+    Tweetter,
 } from "./components/export";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -27,12 +28,13 @@ function App() {
             <Switch>
                 <Route exact path="/" component={() => <Home />} />
                 <Route path="/pokemon" component={() => <Pokedex />} />
-                <Route path="/products" component={() => <FilterableProductTable products={PRODUCTS} />} />
+                <Route path="/products" render={(props) => <FilterableProductTable props={props} products={PRODUCTS} />} />
                 {/* THIS BELOW WORKS THE SAME AS ABOVE AND I HAVE NO IDEA WHY YET */}
                 <Route path="/buzzy" component={AllChgs} />
                 <Route path="/login" component={LoginMovieChg} />
                 <Route path="/business" component={BusinessCard} />
                 <Route path="/bill" component={BillTip} />
+                <Route path="/tweetter" component={Tweetter} />
             </Switch>
             <Footer />
         </Router>
