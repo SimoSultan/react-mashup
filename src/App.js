@@ -12,6 +12,7 @@ import {
     BusinessCard,
     BillTip,
     Tweetter,
+    ExerciseTracker,
 } from "./components/export";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -35,6 +36,7 @@ function App() {
                 <Route path="/business" component={BusinessCard} />
                 <Route path="/bill" component={BillTip} />
                 <Route path="/tweetter" component={Tweetter} />
+                <Route path="/exercise" component={ExerciseTracker} />
             </Switch>
             <Footer />
         </Router>
