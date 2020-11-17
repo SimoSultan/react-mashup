@@ -1,4 +1,3 @@
-// import React from 'react'
 import React, { useEffect, useRef } from 'react'
 import { useCookieContext } from './CookieClickerContext'
 import { ACTIONS } from './stateReducerCookie'
@@ -18,7 +17,7 @@ function CookieCount() {
 
 
     useEffect(() => { 
-        if (timer.current) stopCounter()
+        if(timer.current) stopCounter()
         startCounter() 
     }, [state.cookiesPerSecond])
   
