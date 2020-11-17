@@ -13,6 +13,7 @@ import {
     BillTip,
     Tweetter,
     ExerciseTracker,
+    CookieClicker,
 } from "./components/export";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -37,6 +38,7 @@ function App() {
                 <Route path="/bill" component={BillTip} />
                 <Route path="/tweetter" component={Tweetter} />
                 <Route path="/exercise" component={ExerciseTracker} />
+                <Route path="/cookies" component={CookieClicker} />
             </Switch>
             <Footer />
         </Router>

@@ -10,3 +10,4 @@ export { default as BusinessCard } from "./loginMovies/businessCard/BusinessCard
 export { default as BillTip } from "./billTips/BillTip";
 export { default as Tweetter } from "./tweetter/Tweetter";
 export { default as ExerciseTracker } from "./exercise/ExerciseTracker";
+export { default as CookieClicker } from "./cookie/CookieClicker";

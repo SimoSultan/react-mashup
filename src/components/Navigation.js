@@ -70,6 +70,9 @@ function Navigation( { location } ) {
           <Button color="inherit" className={`${location.pathname === "/exercise" ? "active" : ""}`}>
             <Link className={classes.link} to="/exercise">Exercise</Link>
           </Button>
+          <Button color="inherit" className={`${location.pathname === "/cookies" ? "active" : ""}`}>
+            <Link className={classes.link} to="/cookies">Cookies</Link>
+          </Button>
         </Toolbar>
       </AppBar>
     </div>

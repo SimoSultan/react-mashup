@@ -1,5 +1,5 @@
 import React from 'react'
-import {Button, Grid, Container, Typography} from '@material-ui/core'
+import {Button, Grid, Typography} from '@material-ui/core'
 import { useExerciseContext } from './ExerciseTrackerContext'
 import { ACTIONS } from '../../config/stateReducer'
 
