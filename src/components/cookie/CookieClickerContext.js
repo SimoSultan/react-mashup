@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useReducer } from 'react'
+import React, { useReducer, createContext, useContext } from 'react'
 import stateReducerCookie from './CookieClickerContext'
 
 const CookieContext = createContext()
@@ -7,7 +7,7 @@ export function useCookieContext() {
     return useContext(CookieContext)
 }
 
-function CookieClickerContext( { children } ) {
+function CookieClickerProvider( { children } ) {
 
     // initial state for state reducer
     const initialState = {
@@ -25,4 +25,4 @@ function CookieClickerContext( { children } ) {
     )
 }
 
-export default CookieClickerContext
+export default CookieClickerProvider

@@ -1,14 +1,22 @@
 import React from 'react'
 
+import 
+{ 
+    Box,
+    Button,
+    Typography, 
+} from '@material-ui/core';
+
+
 function CookiePerClick() {
     return (
         <>
-            <div>
-                <h3>
+            <Box my={4}>
+                <Typography variant="h4">
                     Increase Cookies Per Click
-                </h3>
-                <button>Spend 5 cookies to increase cookies per click by 1</button>
-            </div>
+                </Typography>
+                <Button variant="outlined" color="primary">Spend 5 cookies to increase cookies per click by 1</Button>
+            </Box>
         </>
     )
 }

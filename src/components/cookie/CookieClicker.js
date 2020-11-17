@@ -2,7 +2,7 @@ import React from 'react'
 import CookieCount from './CookieCount'
 import CookiesPerClick from './CookiesPerClick'
 import CookiesPerSecond from './CookiesPerSecond'
-import CookieClickerContext from './CookieClickerContext'
+import CookieClickerProvider from './CookieClickerContext'
 
 import 
 { 
@@ -16,7 +16,7 @@ function CookieClicker() {
     
     return (
 
-        <CookieClickerContext>
+        <CookieClickerProvider>
 
             <Container style={{textAlign: 'center'}}>
                 <Typography variant="h2" style={{ marginTop: '5%'}}>Auto Cookie Clicker 2.0</Typography>
@@ -28,7 +28,7 @@ function CookieClicker() {
                 </Grid>
             </Container>
 
-        </CookieClickerContext>
+        </CookieClickerProvider>
     )
 }
 

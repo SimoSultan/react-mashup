@@ -37,7 +37,7 @@ function App() {
                 <Route path="/business" component={BusinessCard} />
                 <Route path="/bill" component={BillTip} />
                 <Route path="/tweetter" component={Tweetter} />
-                <Route path="/exercise" component={ExerciseTracker} />
+                {/* <Route path="/exercise" component={ExerciseTracker} /> */}
                 <Route path="/cookies" component={CookieClicker} />
             </Switch>
             <Footer />
