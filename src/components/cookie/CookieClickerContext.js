@@ -1,5 +1,5 @@
 import React, { useReducer, createContext, useContext } from 'react'
-import stateReducerCookie from './CookieClickerContext'
+import stateReducerCookie from './stateReducerCookie'
 
 const CookieContext = createContext()
 

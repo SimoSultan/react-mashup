@@ -6,7 +6,6 @@ import ListExercise from './ListExercise'
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 
-
 function AllExercises() {
 
     const {state} = useExerciseContext()
